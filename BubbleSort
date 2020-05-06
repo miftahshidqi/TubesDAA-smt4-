@@ -1,0 +1,24 @@
+print("Buble Sort")
+
+import time
+start_time = time.time()
+import random
+
+#my_list = [4, -7, 5, 4]
+print()
+my_list = [random.randrange(1,1000) for i in range(530)]
+print ("Array sebelum di sorting: ", end="\n") 
+printList(my_list)
+print()
+is_sorted = False
+while not is_sorted:
+  is_sorted = True
+  for i in range(len(my_list) - 1):
+    if my_list[i] > my_list[i + 1]:
+      my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+      is_sorted = False
+
+print("Array setelah disorting: ", end="\n") 
+printList(my_list) 
+print()
+print("--- %s seconds ---" % round(time.time() - start_time, 2))
